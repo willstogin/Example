@@ -31,6 +31,14 @@ public class Main {
 			int tmpMin;
 			int tmpHr;
 			
+			// If the alarm clock is ringing, don't do anything until it is stopped
+			if (myAlarmClock.isRinging()) {
+				System.out.println("RRRRRRRRRIIIIIIINNNNNNNGGG!!!!\nEnter \"Stop\" to stop the ringing:");
+				if (consoleIn.nextLine() == "Stop")
+					myAlarmClock.stopAlarm();
+			}
+			
+			
 			System.out.println("What would you like to do?");
 			nextLine = consoleIn.nextLine();
 			
