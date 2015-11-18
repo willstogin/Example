@@ -17,6 +17,9 @@ public class Main {
 		Scanner consoleIn = new Scanner(System.in);
 		String nextLine = "";
 		boolean keepGoing = true;
+		
+		// Make the AlarmClock
+		AlarmClock myAlarmClock = new AlarmClock();
 
 		System.out.println("Hi, I'm an alarm clock! You can: ask me for time and stuff!");
 		 
@@ -24,34 +27,40 @@ public class Main {
 		
 		while (keepGoing) {
 			
+			// For getting inputs
+			int tmpMin;
+			int tmpHr;
+			
 			System.out.println("What would you like to do?");
 			nextLine = consoleIn.nextLine();
 			
 			switch (nextLine) {
 			case GET_TIME:
-				//TODO
-				System.out.println("You asked for: " + nextLine);
+				System.out.println("The current time is: " + myAlarmClock.getTime());
 				break;
 			case SET_TIME:
-				// TODO
-				System.out.println("You asked for: " + nextLine);
+				System.out.println("Enter the hour: ");
+				tmpHr = consoleIn.nextInt();
+				System.out.println("Enter the minute: ");
+				tmpMin = consoleIn.nextInt();
+				myAlarmClock.setTime(tmpHr, tmpMin);
 				break;
 			case SET_ALARM:
-				//TODO 
-				System.out.println("You asked for: " + nextLine);
+				System.out.println("Enter the hour: ");
+				tmpHr = consoleIn.nextInt();
+				System.out.println("Enter the minute: ");
+				tmpMin = consoleIn.nextInt();
+				myAlarmClock.setAlarm(tmpHr, tmpMin);
 				break;
 			case GET_ALARM:
-				// TODO
-				System.out.println("You asked for: " + nextLine);
+				System.out.println("The alarm is set for: " + myAlarmClock.getAlarm());
 				break;
 			case EXIT:
 				// make keepGoing false to break out of the while
 				keepGoing = false;
-				System.out.println("You asked for: " + nextLine);
 				break;
 			case STEP:
-				// TODO
-				System.out.println("You asked for: " + nextLine);
+				myAlarmClock.tick();
 				break;
 			case HELP:
 				//TODO print out help instructions
@@ -66,6 +75,7 @@ public class Main {
 		}
 		
 		System.out.println("Goodbye!");
+		consoleIn.close();
 	}
 	
 	
