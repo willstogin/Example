@@ -69,7 +69,17 @@ public class AlarmClock {
 		alarm.setMinute(minute);
 	}
 	
+	public void tick() {
+		current.setMinute(current.getMinute() + 1);
+		
+		if (current.getMinute() == 0)
+			current.setHour(current.getHour() + 1);
+		
+		if (alarm.equals(current))
+			ringing = true;
+	}
 	
+	public void stopAlarm() { ringing = false; }
 	
 	
 	private class Time {
@@ -87,6 +97,11 @@ public class AlarmClock {
 		
 		public void setMinute(int newMinute) { minute = newMinute % 60; }
 		public int getMinute() { return minute; }
+		
+		public boolean equals(Time otherTime) {
+			return otherTime.getHour() == this.hour 
+					&& otherTime.getMinute() == this.minute;
+		}
 	}
 	
 }
