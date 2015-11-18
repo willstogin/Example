@@ -1,8 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Contains main method for running the alarm clock I/O
+ * @author William
+ *
+ */
 public class Main {
 
-	
+	/**
+	 * This runs first when the project is run
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		// Gets input from user
@@ -16,5 +24,24 @@ public class Main {
 		
 		System.out.println("You asked for: " + nextLine);
 	}
+	
+	
+	
+	
+	/* *************************** COMMANDS ******************************* */
+	private final String GET_TIME = "time?";
+	
+	private final String SET_TIME = "set time";
+	
+	private final String GET_ALARM = "alarm?";
+	
+	private final String SET_ALARM = "set alarm";
+	
+	private final String EXIT = "exit";
+	
+	private final String STEP = "wait";
+	
+	
+	
 
 }
