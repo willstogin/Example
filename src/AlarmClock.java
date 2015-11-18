@@ -103,7 +103,7 @@ public class AlarmClock {
 					&& otherTime.getMinute() == this.minute;
 		}
 	}
-	
+	break the code
 	
 	// Hello Git
 }
