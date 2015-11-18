@@ -32,7 +32,7 @@ public class Main {
 			int tmpHr;
 			
 			// If the alarm clock is ringing, don't do anything until it is stopped
-			if (myAlarmClock.isRinging()) {
+			while (myAlarmClock.isRinging()) {
 				System.out.println("RRRRRRRRRIIIIIIINNNNNNNGGG!!!!\nEnter \"Stop\" to stop the ringing:");
 				if (consoleIn.nextLine() == "Stop")
 					myAlarmClock.stopAlarm();
