@@ -33,9 +33,11 @@ public class Main {
 			
 			// If the alarm clock is ringing, don't do anything until it is stopped
 			while (myAlarmClock.isRinging()) {
-				System.out.println("RRRRRRRRRIIIIIIINNNNNNNGGG!!!!\nEnter \"Stop\" to stop the ringing:");
-				if (consoleIn.nextLine() == "Stop")
+				System.out.println("RRRRRRRRRIIIIIIINNNNNNNGGG!!!!\nEnter \"0\" to stop the ringing:");
+				tmpHr = consoleIn.nextInt();
+				if (tmpHr == 0) {
 					myAlarmClock.stopAlarm();
+				}
 			}
 			
 			
@@ -77,6 +79,7 @@ public class Main {
 				break;
 			default:
 				System.out.println("I don't know how to do that.\nEnter " + HELP + "for a list of commands");
+				break;
 				
 			}
 			
